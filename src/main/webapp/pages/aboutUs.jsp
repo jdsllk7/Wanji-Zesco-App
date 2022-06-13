@@ -10,22 +10,18 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">About Developer</h1>
     </div>
 
     <!-- Content Row -->
     <div class="row">
 
-        <div class="text-center col-lg-12 m-2">
-            <img src="<c:url value="/img/zesco.png" />" alt="">
-        </div>
-
         <div class="col-lg-12 mb-4 text-center">
-            <div class="card bg-transparent text-info m-2">
-                <div class="card-body p-5">
-                    Welcome to ZESCO Limited Issue Tracking Web App
-                </div>
-            </div>
+            <ul class="list-group">
+                <li class="list-group-item">SIN: </li>
+                <li class="list-group-item">Full Names: Wanji Sampa</li>
+                <li class="list-group-item">Program: Bachelor of Science in Computer Science</li>
+            </ul>
         </div>
 
     </div>

@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
-    $("#LoginForm").on('submit', function (event) {
+    $("#SignupForm").on('submit', function (event) {
         event.preventDefault();
         event.stopPropagation();
 
-        let form = $('#LoginForm');
+        let form = $('#SignupForm');
 
         let formData = new FormData(form[0]);
 
         $.ajax({
-            url: 'login',
+            url: 'signup',
             type: 'POST',
             data: formData,
             cache: false,
@@ -17,7 +17,16 @@ $(document).ready(function () {
             processData: false,
             success: function (response) {
                 if (response.status === "success") {
-                    window.location.href = 'dashboard';
+                    Swal.fire({
+                        title: 'Success',
+                        text: "Account created successfully",
+                        icon: 'success',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Okay'
+                    }).then(() => {
+                        window.location.href = 'dashboard';
+                    })
                 } else if (response.status === "error") {
                     Swal.fire('Error', response.message, response.status);
                 }

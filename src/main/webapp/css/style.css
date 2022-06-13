@@ -5,3 +5,7 @@
 .bg-green {
     background-color: #009959;
 }
+
+body{
+    background-color: #ffffff !important;
+}

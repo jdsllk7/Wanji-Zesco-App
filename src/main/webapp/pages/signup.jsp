@@ -50,26 +50,45 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">ZESCO | LOGIN</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">ZESCO | SIGNUP</h1>
                                 </div>
-                                <form id="LoginForm" style="height: 50vh">
+                                <form id="SignupForm" style="height: 70vh">
+
+                                    <div class="form-group">
+                                        <label>First Name</label><br>
+                                        <input type="text" class="form-control form-control-user" name="firstName">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Last Name</label><br>
+                                        <input type="text" class="form-control form-control-user" name="lastName">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Role</label><br>
+                                        <select name="role" class="form-control form-control-user">
+                                            <option value="Inspector">Inspector</option>
+                                            <option value="Supervisor">Supervisor</option>
+                                        </select>
+                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Email</label><br>
-                                        <input type="email" class="form-control form-control-user"
-                                                                                      name="email" aria-describedby="emailHelp"
-                                                                                      placeholder="Email">
+                                        <input type="email" class="form-control form-control-user" name="email">
                                     </div>
+                                    
                                     <div class="form-group mt-4">
                                         <label>Password</label><br>
                                         <input type="password" class="form-control form-control-user"
-                                                                                         name="password" placeholder="Password">
+                                               name="password">
                                     </div>
+                                    
                                     <button type="submit" class="btn btn-primary btn-user btn-block mt-4">
-                                        Login
+                                        Signup
                                     </button>
 
                                     <div class="text-center mt-5">
-                                        <a href="signup">Sign up</a>
+                                        <a href="login">Login</a>
                                     </div>
                                 </form>
                             </div>
@@ -94,7 +113,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<c:url value="/js/sb-admin-2.min.js"/>"></script>
-<script src="<c:url value="/js/login.js"/>"></script>
+<script src="<c:url value="/js/signup.js"/>"></script>
 
 </body>
 
