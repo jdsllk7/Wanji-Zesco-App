@@ -17,7 +17,7 @@
     <div class="row">
 
         <div class="col-lg-12 mb-4 text-center">
-            <ul class="list-group">
+            <ul class="list-group text-left">
                 <li class="list-group-item">SIN: </li>
                 <li class="list-group-item">Full Names: Wanji Sampa</li>
                 <li class="list-group-item">Program: Bachelor of Science in Computer Science</li>
