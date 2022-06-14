@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<c:url value="/img/zesco.png" />" type="image/x-icon">
     <link rel="stylesheet" href="<c:url value="/sweetalert2/sweetalert2.min.css"/>">
-    <title>Dashboard</title>
+    <title>Zesco</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
