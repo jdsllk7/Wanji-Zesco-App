@@ -61,7 +61,7 @@
         </div>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="dashboard">
                 <i class="fas fa-fw fa-dot-circle"></i>
                 <span>Home</span></a>
         </li>
@@ -73,7 +73,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="equipment">
                 <i class="fas fa-fw fa-dot-circle"></i>
                 <span>Equipment</span></a>
         </li>
@@ -115,7 +115,7 @@
                         <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-lg-inline text-white small mr-2">
-                                Welcome ${firstName}
+                                Welcome ${user.firstName}
                             </span>
                             <img class="img-profile rounded-circle"
                                  src="/img/undraw_profile.svg">

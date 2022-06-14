@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -12,18 +13,18 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Table(name = "user", schema="heroku_cef244ec48cfcf7")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
     @Basic
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
     @Basic
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Basic

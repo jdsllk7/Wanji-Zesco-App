@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,48 +23,33 @@ public class UserService {
     }
 
     @Transactional(rollbackOn = Exception.class)
-    public Map<String, Object> validateUser(MultipartHttpServletRequest map) {
-
-        Map<String, Object> response = new HashMap<>();
+    public User validateUser(HttpServletRequest request) {
 
         try {
 
-            String email = map.getParameter("email");
-            String password = map.getParameter("password");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
 
-            User user = userRepository.findFirstByEmailAndPassword(email, password);
-
-            if (user == null) {
-                response.put(Response.STATUS, Response.ERROR);
-                response.put(Response.MESSAGE, "Wrong credentials. Please try again");
-                return response;
-            }
-
-            //set sessions
-            map.getSession().setAttribute("sessionFirstName", user.getFirstName());
-            map.getSession().setAttribute("sessionLastName", user.getLastName());
-            map.getSession().setAttribute("sessionEmail", user.getEmail());
-            map.getSession().setAttribute("sessionRole", user.getRole());
-
-            response.put(Response.STATUS, Response.SUCCESS);
+            return getUserByEmailAndPassword(email, password);
 
         } catch (Exception e) {
-            response.put(Response.STATUS, Response.ERROR);
-            response.put(Response.MESSAGE, "An error occurred. Please try again");
-            return response;
+            return null;
         }
-
-        return response;
     }
 
-
-    public Map<String, Object> logout(MultipartHttpServletRequest map) {
-        Map<String, Object> response = new HashMap<>();
-        map.getSession().invalidate();
-        response.put(Response.STATUS, Response.SUCCESS);
-        return response;
+    public User getUserByEmail(String email) {
+        return userRepository.findFirstByEmail(email);
     }
 
+    public User getUserByEmailAndPassword(String email, String password) {
+        return userRepository.findFirstByEmailAndPassword(email, password);
+    }
+
+    public User userSession(HttpServletRequest request){
+        return (User) request.getSession().getAttribute("user");
+    }
+
+    @Transactional(rollbackOn = Exception.class)
     public Map<String, Object> signup(MultipartHttpServletRequest map) {
 
         Map<String, Object> response = new HashMap<>();

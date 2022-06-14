@@ -63,6 +63,8 @@
 <script src="<c:url value="/js/demo/chart-area-demo.js"/>"></script>
 <script src="<c:url value="/js/demo/chart-pie-demo.js"/>"></script>
 
+<script src="<c:url value="/js/equipment.js"/>"></script>
+
 </body>
 
 </html>
