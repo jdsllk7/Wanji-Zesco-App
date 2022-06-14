@@ -53,4 +53,8 @@ public class EquipmentService {
     public List<Equipment> getAllEquipment() {
         return equipmentRepository.findAll();
     }
+
+    public Equipment getEquipmentById(Integer id) {
+        return equipmentRepository.findFirstById(id);
+    }
 }

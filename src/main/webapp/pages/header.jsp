@@ -67,7 +67,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="issue">
                 <i class="fas fa-fw fa-dot-circle"></i>
                 <span>Issues</span></a>
         </li>
@@ -115,7 +115,7 @@
                         <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-lg-inline text-white small mr-2">
-                                Welcome ${user.firstName}
+                                Welcome ${user.firstName} (${user.role})
                             </span>
                             <img class="img-profile rounded-circle"
                                  src="/img/undraw_profile.svg">
